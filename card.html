@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Example</title>
+    <style>
+        /* Page Background */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/tru.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Fullscreen modal */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fullscreen-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="img/EL card.jpg" alt="Card image" class="card-img">
+        <div class="card-content">
+            <h2 class="card-title">You are Invited</h2>
+            <p class="card-description">Together with our families, we request the
+                Honour of your presence at our wedding
+                Ceremony as we exchange our marriage Vows
+                and begin our journy together.</p>
+            <button class="card-btn" onclick="openModal()">Full View</button>
+        </div>
+    </div>
+
+    <!-- Fullscreen Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeModal()">
+        <img src="img/EL card.jpg" alt="Invitation Card">
+        <button class="close-btn" onclick="closeModal()">X</button>
+    </div>
+
+    <script>
+        // Function to open the fullscreen modal
+        function openModal() {
+            document.getElementById('fullscreenModal').style.display = 'flex';
+        }
+
+        // Function to close the fullscreen modal
+        function closeModal() {
+            document.getElementById('fullscreenModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

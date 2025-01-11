@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groomsmen Invitation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      background: url('img/background.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      color: #f1f1f1;
+    }
+
+    .card {
+      width: 80%;
+      max-width: 500px;
+      background: rgba(e4c0a4); /* Semi-transparent dark background */
+      padding: 20px 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(245, 243, 243, 0.5);
+      border: 2px solid #ecf0f1;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #000000;
+    }
+
+    .highlight {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    .suit-options {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .suit-option {
+      flex: 1;
+      text-align: center;
+    }
+
+    .suit-option img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      font-size: 1rem;
+      color: #014253;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .button.accept {
+      background-color: #27ae60;
+      border: 2px solid #27ae60;
+    }
+
+    .button.decline {
+      background-color: transparent;
+      border: 2px solid #e74c3c;
+      color: #e74c3c;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .results {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .results p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .invitation-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      size-adjust: 700%;
+      width: 50px;
+    }
+
+    .invitation-card {
+      width: 80%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(196, 191, 191, 0.5);
+      border: 2px solid #ecf0f1;
+      color: #2c3e50;
+      display: none;
+    }
+
+    .invitation-card.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Invitation Card -->
+  <div class="card">
+    <h1 class="title">Will You Be My Bridesmaid?</h1>
+    <p class="subtitle">A special request for a special friend</p>
+    <p class="content">
+      Dear <span class="highlight">Friends</span>,<br><br>
+      I couldn’t imagine my wedding day without you standing by my side. You’ve been there through the laughs, the challenges, and the unforgettable memories. Now, I’d be honored to have you as one of my Bridesmaid as I step into this new chapter of my life.<br><br>
+      I can't say "I do" without you. What do you say?
+    </p>
+    <div class="buttons">
+      <a href="https://chat.whatsapp.com/KFNJKD3U6P52biJb0nXEjm" target="_blank" class="button accept">Accept</a>
+      <a href="#" class="button decline">Decline</a>
+    </div>
+  </div>
+
+  <!-- Contribution Card -->
+  <div class="card">
+    <h2 class="title">Contribution N$3500 </h2>
+    <p class="content">Contribution includes:</p>
+    <ul class="content" style="text-align: left;">
+      <li>Pre-wedding night dress</li>
+      <li>Day 1&2 dress</li>
+      <li>Bridesmaid Pajamas</li>
+      <li>Shoes</li>
+      <li>Earings</li>
+      <li>Clutch bag</li>
+    </ul>
+    <p class="content">Thank you for being part of this special moment.</p>
+  </div>
+
+  <!-- Suit Selection Card -->
+  <div class="card">
+    <h2 class="title">Dress Selection</h2>
+    <p class="subtitle">Vote for your preferred Dress Style, Dress 1 and 2 is choice of styles and Dress 3 is for the main Color only:</p>
+    <div class="suit-options">
+      <div class="suit-option">
+        <img src="img/WhatsApp Image 2025-01-06 at 13.11.59_f3879dd2.jpg" alt="dress 1">
+        <label>
+          <input type="radio" name="Dress" value="Dress 1"> Dress1
+        </label>
+      </div>
+      <div class="suit-option">
+        <img src="img/925.jpg" alt="Suit 2">
+        <label>
+          <input type="radio" name="suit" value="Suit 2"> Dress 2
+        </label>
+      </div>
+      <div class="suit-option">
+        <img src="img/WhatsApp Image 2025-01-06 at 13.11.59_b2e473a4.jpg" alt="Suit 2">
+        <label>
+          <input type="radio" name="suit" value="Suit 2"> Dress 3
+        </label>
+      </div>
+    </div>
+    <button class="button" id="voteButton">Vote</button>
+    <div class="results" id="results">
+      <p>Dress 1 Votes: <span id="suit1Votes">0</span></p>
+      <p>Dress 2 Votes: <span id="suit2Votes">0</span></p>
+    </div>
+  </div>
+
+  <!-- Invitation Preview Section -->
+  <div class="invitation-preview">
+    <button id="view-card-button" class="button" onclick="redirectToWeddingCard()">View Card</button>
+    <div class="invitation-card" id="invitationCard">
+      <h2>Wedding Invitation</h2>
+      <p>Join us in celebrating our big day!</p>
+      <p>Date: 03 October 2025</p>
+      <p>Location: Omaumba Uukwaluudhi, Omusati Region</p>
+      <p>Time: 13H00</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleInvitationCard() {
+      const invitationCard = document.getElementById('invitationCard');
+      invitationCard.classList.toggle('active');
+    }
+
+    function redirectToWeddingCard() {
+      window.location.href = 'card.html';
+    }
+
+    const voteButton = document.getElementById('voteButton');
+    const results = document.getElementById('results');
+    const suit1VotesElem = document.getElementById('suit1Votes');
+    const suit2VotesElem = document.getElementById('suit2Votes');
+
+    // Initialize votes from local storage
+    let suit1Votes = parseInt(localStorage.getItem('suit1Votes')) || 0;
+    let suit2Votes = parseInt(localStorage.getItem('suit2Votes')) || 0;
+    let hasVoted = localStorage.getItem('hasVoted') || false;
+
+    // Update displayed votes
+    function updateVotes() {
+      suit1VotesElem.textContent = suit1Votes;
+      suit2VotesElem.textContent = suit2Votes;
+    }
+
+    updateVotes();
+
+    // Voting functionality
+    voteButton.addEventListener('click', () => {
+      if (hasVoted) {
+        alert('You have already voted.');
+        return;
+      }
+
+      const selectedSuit = document.querySelector('input[name="suit"]:checked');
+      if (!selectedSuit) {
+        alert('Please select a suit to vote.');
+        return;
+      }
+
+      const vote = selectedSuit.value;
+      if (vote === 'Suit 1') {
+        suit1Votes++;
+      } else if (vote === 'Suit 2') {
+        suit2Votes++;
+      }
+
+      // Save votes to local storage
+      localStorage.setItem('suit1Votes', suit1Votes);
+      localStorage.setItem('suit2Votes', suit2Votes);
+      localStorage.setItem('hasVoted', true);
+      hasVoted = true;
+
+      // Update results display
+      updateVotes();
+      alert('Thank you for your vote!');
+    });
+  </script>
+</body>
+</html>
